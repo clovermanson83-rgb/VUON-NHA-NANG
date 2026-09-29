@@ -378,7 +378,7 @@ max-width: 60% !important;   /* Giới hạn độ rộng tối đa của khu v�
         let currentGroupId = null;
 
         // Tự động lắng nghe thay đổi đồng bộ từ máy chủ Realtime
-        database.ref('HOI_VIEN_DATA_V5').on('value', (snapshot) => {
+        database.ref('VUON_CUA_NANG_DATA_V1').on('value', (snapshot) => {
             const serverData = snapshot.val();
             if (serverData) {
                 DB = serverData;
@@ -387,8 +387,8 @@ max-width: 60% !important;   /* Giới hạn độ rộng tối đa của khu v�
                 if(!DB.globalFlowers) DB.globalFlowers = [];
             } else {
                 DB = {
-                    groups: { "G_1": { name: "Hội Mẫu Đơn Sài Gòn" } },
-                    members: { "G_1": [{ id: 111, name: "Admin Thử Nghiệm", phone: "0912345678", role: "Hội trưởng", ownedFlowers: [] }] },
+                    groups: { "G_1": { name: "VUON CUA NANG" } },
+                    members: { "G_1": [{ id: 111, name: "Clover", phone: "080993", role: "Hội trưởng", ownedFlowers: [] }] },
                     globalFlowers: [{ id: "FL_1", name: "Mẫu Đơn Đỏ", img: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=400", tier: "Hoa phẩm đỏ" }]
                 };
                 pushDataToServer();
